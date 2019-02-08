@@ -11,12 +11,12 @@ class PolyTreeNode
 
  def parent=(new_parent)
     
-    parent.children.delete(self) unless parent == nil
+    @parent.children.delete(self) unless parent == nil
     
-    parent = new_parent
+    @parent = new_parent
 
-    unless parent == nil || parent.children.include?(self) 
-        parent.children << self 
+    unless @parent == nil || @parent.children.include?(self) 
+        @parent.children << self 
     end
 end
 
@@ -36,5 +36,5 @@ end
 
 
 attr_reader :parent, :children, :value
-attr_accessor :children, :parent
+attr_accessor :children
 end
